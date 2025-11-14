@@ -148,12 +148,12 @@ void pp5() {
 }
 
 void pp6() {
-    printf("sizeof(short):\t\t%2ld\n", sizeof(short));
-    printf("sizeof(int):\t\t%2ld\n", sizeof(int));
-    printf("sizeof(long):\t\t%2ld\n", sizeof(long));
-    printf("sizeof(float):\t\t%2ld\n", sizeof(float));
-    printf("sizeof(double):\t\t%2ld\n", sizeof(double));
-    printf("sizeof(long double):\t%2ld\n", sizeof(long double));
+    printf("sizeof(short):\t\t%2zu\n", sizeof(short));
+    printf("sizeof(int):\t\t%2zu\n", sizeof(int));
+    printf("sizeof(long):\t\t%2zu\n", sizeof(long));
+    printf("sizeof(float):\t\t%2zu\n", sizeof(float));
+    printf("sizeof(double):\t\t%2zu\n", sizeof(double));
+    printf("sizeof(long double):\t%2zu\n", sizeof(long double));
 }
 
 void pp7() {
