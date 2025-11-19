@@ -6,8 +6,8 @@
  *   3. 5 4 3 2
  *   4. (c) is not equivalent.
  *   5. (c) is (again) not equivalent.
- *   6. for (int i = 1; i <= 128; i *= 2) printf("%d ", i);
- *   7. for (int i = 9384; i > 0; i /= 10) printf("%d ", i);
+ *   6. for (i = 1; i <= 128; i *= 2) printf("%d ", i);
+ *   7. for (i = 9384; i > 0; i /= 10) printf("%d ", i);
  *   8. 10 5 3 2 1 1 1...
  *   9. i = 10; while (i >= 1) { printf("%d ", i++); i /= 2; }
  *  10. for (...) {
@@ -114,12 +114,12 @@ void pp5() {
 }
 
 void pp6() {
-    int n;
+    int n, i;
 
     printf("Enter a number n: ");
     scanf("%d", &n);
 
-    for (int i = 1; (i * i) < n; i++) {
+    for (i = 1; (i * i) < n; i++) {
         if (i % 2 == 0) {
             printf("%d\n", (i * i));
         }
@@ -128,29 +128,29 @@ void pp6() {
 }
 
 void pp7() {
-    int n;
+    int n, i, s, o;
 
     printf("This program prints a table of squares.\n");
     printf("Enter number of entries in table: ");
     scanf("%d", &n);
 
-    for (int i = 1, s = 1, o = 3; i <= n; i++, s += o, o += 2) {
+    for (i = 1, s = 1, o = 3; i <= n; i++, s += o, o += 2) {
         printf("%10d%10d\n", i, s);
     }
 }
 
 void pp8() {
-    int d, w;
+    int d, w, i;
 
     printf("Enter number of days in month: ");
     scanf("%d", &d);
     printf("Enter starting day of the week (1=Sun, 7=Sat): ");
     scanf("%d", &w);
 
-    for (int i = w; i > 1; i--) {
+    for (i = w; i > 1; i--) {
         printf("   ");
     }
-    for (int i = 1; i <= d; w++, i++) {
+    for (i = 1; i <= d; w++, i++) {
         printf("%2d ", i);
         if (w % 7 == 0) {
             printf("\n");
@@ -161,7 +161,7 @@ void pp8() {
 
 void pp9() {
     float a, i, m, r;
-    int p;
+    int p, y;
 
     printf("Enter amount of loan: ");
     scanf("%f", &a);
@@ -173,7 +173,7 @@ void pp9() {
     scanf("%d", &p);
 
     r = (i / 12 / 100) + 1;
-    for (int y = 1; y <= p; y++) {
+    for (y = 1; y <= p; y++) {
         a = (a - m) * r;
         printf("Balance remaining after %d. payment: $%.2f\n", y, a);
     }
@@ -205,15 +205,15 @@ void pp10() {
 }
 
 void pp11() {
-    int n;
+    int n, i, j;
     float a, r = 1.0f;
 
     printf("Enter n: ");
     scanf("%d", &n);
 
-    for (int i = 1; i <= n; i++) {
+    for (i = 1; i <= n; i++) {
         a = 1.0f;
-        for (int j = 1; j <= i; j++) {
+        for (j = 1; j <= i; j++) {
             a *= j;
         }
         r += 1.0f / a;
@@ -223,14 +223,15 @@ void pp11() {
 }
 
 void pp12() {
+    int i, j;
     float e, a, r = 1.0f;
 
     printf("Enter epsilon: ");
     scanf("%f", &e);
 
-    for (int i = 1; r < e; i++) {
+    for (i = 1; r < e; i++) {
         a = 1.0f;
-        for (int j = 1; j <= i; j++) {
+        for (j = 1; j <= i; j++) {
             a *= j;
         }
         r += 1.0f / a;

@@ -32,14 +32,14 @@ void pp1() {
 }
 
 void pp2() {
-    int n;
+    int n, i;
 
     printf("This program prints a table of squares.\n");
     printf("Enter number of entries in table: ");
     scanf("%d", &n);
     getchar(); /* catch newline */
 
-    for (int i = 1; i <= n; i += 1) {
+    for (i = 1; i <= n; i += 1) {
         if (i % 24 == 0) {
             printf("Press Enter to continue...");
             while (getchar() != '\n');
@@ -148,12 +148,12 @@ void pp5() {
 }
 
 void pp6() {
-    printf("sizeof(short):\t\t%2zu\n", sizeof(short));
-    printf("sizeof(int):\t\t%2zu\n", sizeof(int));
-    printf("sizeof(long):\t\t%2zu\n", sizeof(long));
-    printf("sizeof(float):\t\t%2zu\n", sizeof(float));
-    printf("sizeof(double):\t\t%2zu\n", sizeof(double));
-    printf("sizeof(long double):\t%2zu\n", sizeof(long double));
+    printf("sizeof(short):\t\t%2hd\n", (short) sizeof(short));
+    printf("sizeof(int):\t\t%2hd\n", (short) sizeof(int));
+    printf("sizeof(long):\t\t%2hd\n", (short) sizeof(long));
+    printf("sizeof(float):\t\t%2hd\n", (short) sizeof(float));
+    printf("sizeof(double):\t\t%2hd\n", (short) sizeof(double));
+    printf("sizeof(long double):\t%2hd\n", (short) sizeof(long double));
 }
 
 void pp7() {
@@ -357,7 +357,7 @@ void pp14() {
         y1 = (y1 + z) / 2;
     } while (fabs(y2 - y1) >= 1.e-4);
 
-    printf("Square root: %.5lf\n", y1);
+    printf("Square root: %.5f\n", y1);
 }
 
 /*
@@ -370,13 +370,13 @@ void pp14() {
  * (g) 1754
  */
 void pp15() {
-    short n, s;
+    short n, s, i;
 
     printf("Enter a positive number: ");
     scanf("%hd", &n);
     s = n;
 
-    for (short i = n; i > 1; i -= 1) {
+    for (i = n; i > 1; i -= 1) {
         s = s * (i - 1);
     }
 

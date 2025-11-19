@@ -11,7 +11,7 @@
  *  3. bool weekend[] = {1, 0, 0, 0, 0, 0, 1} 
  *  4. bool weekend[] = {[0] = 1, [6] = 1}
  *  5. int fib_numbers[40] = {0, 1};
- *     for (int i = 2; i < (sizeof(fib_numbers) / sizeof(fib_numbers[0])); i++) {
+ *     for (i = 2; i < (sizeof(fib_numbers) / sizeof(fib_numbers[0])); i++) {
  *         fib_numbers[i] = fib_numbers[i-1] + fib_numbers[i-2];
  *     }
  *  6. const int segments[10][7] = {
@@ -39,8 +39,8 @@
  *         {1, 1, 1, 1, [5] = 1, 1 } // 9
  *     };
  *  8. float temperature_readings[30][24];
- *  9. for (int i = 0; i < 30; i++) {
- *         for (int j = 0; j < 24; j += 1) {
+ *  9. for (i = 0; i < 30; i++) {
+ *         for (j = 0; j < 24; j++) {
  *             a += temperature_readings[i][j];
  *         }
  *     }
@@ -56,8 +56,8 @@
  *         {'R', 'N', 'B'. 'Q', 'K', 'B', 'N', 'R'}
  *     };
  * 11. char checker_board[8][8];
- *     for (int i = 0; i < 8; i++) {
- *         for(int j = 0; j < 8; j += 1) {
+ *     for (i = 0; i < 8; i++) {
+ *         for(j = 0; j < 8; j++) {
  *             if ((i + j) % 2) {
  *                 checker_board[i][j] = 'R';
  *             } else {
@@ -150,7 +150,7 @@ void pp4() {
 }
 
 void pp5() {
-    int r, y;
+    int r, y, i, j, k;
     double a[5], s;
 
     printf("Enter interest rate: ");
@@ -159,17 +159,17 @@ void pp5() {
     scanf("%d", &y);
 
     printf("Years\t");
-    for (int i = 0; i < 5; i++) {
+    for (i = 0; i < 5; i++) {
         printf("%9d%%", r + i);
         a[i] = 100.0;
     }
     printf("\n");
 
-    for (int i = 1; i <= y; i++) {
+    for (i = 1; i <= y; i++) {
         printf("%5d\t", i);
-        for (int j = 0; j < 5; j += 1) {
+        for (j = 0; j < 5; j += 1) {
             s = 0;
-            for (int k = 0; k < 12; k += 1) {
+            for (k = 0; k < 12; k += 1) {
                 s += ((r + j) / 100.0) * a[j];
             }
             a[j] += s;
@@ -180,10 +180,11 @@ void pp5() {
 }
 
 void pp6() {
+    int i;
     char m[256];
 
     printf("Enter message: ");
-    for (int i = 0; i < 256; i++) {
+    for (i = 0; i < 256; i++) {
         m[i] = getchar();
         if (m[i] == '\n') {
             break;
@@ -191,7 +192,7 @@ void pp6() {
     }
 
     printf("In B1FF-speak: ");
-    for (int i = 0; i < 256; i++) {
+    for (i = 0; i < 256; i++) {
         m[i] = toupper(m[i]);
         if (m[i] == '\n') {
             printf("!!!!!!!!!!\n");
@@ -388,14 +389,16 @@ void pp17() {
 }
 
 int main(void) {
-    // pp1();
-    // pp2();
-    // pp3();
-    // pp4();
-    // pp5();
-    // pp6();
-    // pp7();
-    // pp8();
+    /*
+     * pp1();
+     * pp2();
+     * pp3();
+     * pp4();
+     * pp5();
+     * pp6();
+     * pp7();
+     * pp8();
+     */
     pp9();
     pp10();
     pp11();
